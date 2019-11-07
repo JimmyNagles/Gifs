@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Gifs!</title>
+</head>
+<!-- background color to dark -->
+
+<body class="bg-dark">
+    <!-- nav bar , where search bar is -->
+    <nav class="navbar p-3 mb-2 bg-warning text-dark">
+        <a class="navbar-brand">Gifs!</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2 bg-dark" type="search" placeholder="Search" id="gifSearch"
+                aria-label="Search">
+            <!-- where the search bar is and the id  -->
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" id="search">Search</button>
+        </form>
+    </nav>
+    <!-- where the buttons get displayed -->
+    <div class="row p-3 mb-2 bg-warning text-dark" id="botones">
+
+
+
+    </div>
+    <!-- where gifs are shown -->
+    <div class="row ">
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <!-- gifs ID -->
+                <div id="images">
+                </div>
+            </div>
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+
+            //array for gifs
+            var gifs = ["Cats", "dogs"];
+
+//shows buttons
+            function renderbuttons() {
+                //empties 
+                $("#botones").empty();
+                //looping to array
+                for (let x = 0; x < gifs.length; x++) {
+
+                    //creates a button
+                    var botones = $("<button>")
+                    //add class of bootstrap
+                    botones.addClass("btn btn-warning btn-outline-dark")
+                    //the data name of the gift 
+                    botones.attr("data-name", gifs[x]);
+                    // the name you see on botton
+                    botones.text(gifs[x]);
+                    //adds button on screen
+                    $("#botones").append(botones);
+                }
+            }
+
+
+            //when search button is clicked then adds the following
+            $("#search").on("click", function (event) {
+                //prevents page from re loading
+                event.preventDefault();
+
+                //search input
+                //what you type goes into usersearch
+                const userSearch = $("#gifSearch").val().trim();
+                
+                //adds what yoy typed on search to gifs array
+
+                gifs.push(userSearch);
+                //renders buttons
+                renderbuttons();
+
+            });
+
+
+
+function displayGifs(){
+
+var theGif= $(this).attr("data-name")
+
+
+
+}
+
+
+
+            renderbuttons();
+        </script>
+</body>
+
+</html>
