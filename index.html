@@ -44,12 +44,42 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
-        
+            //API
+
+         var myApi = "https://api.giphy.com/v1/gifs/search?api_key=KmTJWFHfw7I9gCj0RMZL7kRHYpuAI7xz&q=San Francisco &limit=30&offset=0&rating=R&lang=en"
+            $.ajax({
+            url: myApi,
+            method: "GET"
+         }).then(function(getGifs){
+
+console.log(getGifs)
+
+
+
+
+
+         })
+
+
+   //when button is click 
+   function displayGifs() {
+
+var theGif = $(this).attr("data-name")
+
+//alerts the name of the button you clicked
+alert(theGif)
+
+
+}
+
+
+
+
 
             //array for gifs
             var gifs = ["Cats", "dogs"];
 
-//shows buttons
+            //shows buttons
             function renderbuttons() {
                 //empties 
                 $("#botones").empty();
@@ -78,7 +108,7 @@
                 //search input
                 //what you type goes into usersearch
                 const userSearch = $("#gifSearch").val().trim();
-                
+
                 //adds what yoy typed on search to gifs array
 
                 gifs.push(userSearch);
@@ -88,16 +118,9 @@
             });
 
 
-
-function displayGifs(){
-
-var theGif= $(this).attr("data-name")
-
-
-
-}
-
-
+         
+            //when document ready 
+            $(document).on("click", ".btn", displayGifs)
 
             renderbuttons();
         </script>
