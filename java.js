@@ -1,43 +1,63 @@
-
-
-let gifsApi = "https://api.giphy.com/v1/gifs/search?api_key=E6gg5fTXtBho66u0GtHPRGBLgNap40y7&q=cat&limit=25&offset=0&rating=G&lang=en"
-
-$.ajax({
- url: gifsApi,
- method: "GET"
-}).then(function(response){
-
-
-console.log("succes",response.data)
-
-
-var gifsArray = response.data
-
-
-
-for (let x = 0; x < gifsArray.length; x++) {
+$(document).ready(function () {
+    
+    $(document).on("click", ".gif-class", function () {
     
     
-    let gifLink = response.data[x].embed_url
-    let rating= response.data[x].rating
-    let tittle= response.data[x].title
-
-
-console.log("R",rating)
-console.log("link",gifLink)
-console.log("tittle",tittle)
-
-$("#titulo").text(tittle)
-
-//titulo
-//rating
-//<i class="right" id="rating"></i>
-
-
-}
+    
+        buttonGif = $(this).text();
+        GifAPICall();
 
 
 
+
+       
+
+
+        console.log(buttonGif)
+
+
+
+        
+$("gifDiv").append()
+
+    })
+
+    let buttonGif;
+
+    function GifAPICall() {
+
+        let gifsApi = "https://api.giphy.com/v1/gifs/search?api_key=E6gg5fTXtBho66u0GtHPRGBLgNap40y7&q=" + buttonGif + "&limit=25&offset=0&rating=G&lang=en"
+
+        $.ajax({
+            url: gifsApi,
+            method: "GET"
+        }).then(function (response) {
+
+            console.log("succes", response.data)
+
+            var gifsArray = response.data
+
+            // creatingBtn();
+            
+
+
+            for (let x = 0; x < gifsArray.length; x++) {
+               
+
+                let gifLink = response.data[x].images.downsized.url;
+                let rating = response.data[x].rating
+                let tittle = response.data[x].title
+        
+                console.log(gifLink, rating, tittle)
+    
+                $('#gifDiv').append(x,tittle)
+
+                
+            }
+
+        });
+
+    }
 
 
 
@@ -47,7 +67,30 @@ $("#titulo").text(tittle)
 
 
 
-function addImgToScreen(){ 
+
+
+
+// btn creating function
+
+$("#search-btn").on("click", function () {
+
+    let pullGif = $("#gifSearch").val().trim();
+
+
+    console.log("working", pullGif);
+
+
+
+    $("#botones").append(' <a class="btn-floating btn-large waves-effect waves-light black gif-class">' + pullGif + '</a>')
+
+
+
+
+
+});
+
+function showGifs(){
+
 
     
 
@@ -55,4 +98,3 @@ function addImgToScreen(){
 
 
 }
-

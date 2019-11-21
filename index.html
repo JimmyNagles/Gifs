@@ -7,142 +7,88 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Gifs search!</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Gifs search!</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </head>
 
 <body class="grey darken-4">
 
+<div class="container">
+  <nav>
+    <div class="nav-wrapper black">
+      <a href="#" class="brand-logo center "> <i class="material-icons large right" id="search-btn">search </i>Gifs Search</a>
 
-        <nav>
-            <div class="nav-wrapper black">
-                <a href="#" class="brand-logo center ">Gifs Search</a>
-    
-         
-                <div class="input-field">
-                    <input id="gifSearch" type="search">
-                    <label class="label-icon" for="search" ></label>
-                    <i class="material-icons" id="search-btn">search</i>
-                  
-                </div>
-         
-
-        </nav>
- 
+  </nav>
 
 
-    <br>
+  <nav>
 
-    <div class="container">
-
-       <div class="row">
-
-        
-        <a class="btn-floating btn-large waves-effect waves-light black">Cat</a>
-        <a class="btn-floating btn-large waves-effect waves-light black">Dog</a>
-       </div>
-    </div>
-
-
-<br>
-
-
-    <div class="container">
-
+      <div class="grey darken-2  input-field">
+          <!-- id for bar -->
+          <input class="input-field " id="gifSearch" type="text"/>
+          <!-- id icon -->
+          
+          <label class="label-icon" for="search"></label>
       
 
+  </nav>
+  
+</div>
+
+  <br>
+
+  <div class="container">
+
+    <div class="row" id="botones">
+
+
     
-      <div class="row">
-        <div class="col s6 m4 l3">
-          <div class="card">
-            <div class="card-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvpxLCmqFPZEJydjc_bu_BEeEP78EF5P2iN2Iohc8MsiqOvpl&s">
-              <span class="card-title black white-text">cat</span>
-            </div>
-            <div class="card-content black white-text">
-              <p>I am a very simple card. </p>
-            </div>
-           
-          </div>
-        </div>
+   
+    </div>
+  </div>
 
 
+  <br>
 
-        <div class="col s6 m4 l3">
-                <div class="card">
-                  <div class="card-image">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvpxLCmqFPZEJydjc_bu_BEeEP78EF5P2iN2Iohc8MsiqOvpl&s">
-                    <span class="card-title black white-text">cat</span>
-                  </div>
-                  <div class="card-content black white-text">
-                    <p>I am a very simple card. .</p>
-                  </div>
-                 
-                </div>
-              </div>
+
+  <div class="container">
 
 
 
 
-              
-      <div class="row">
-            <div class="col s6 m4 l3">
-              <div class="card">
-                <div class="card-image">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvpxLCmqFPZEJydjc_bu_BEeEP78EF5P2iN2Iohc8MsiqOvpl&s">
-                 
-                </div>
-                <div class="card-content black white-text">
-                  <p id="titulo"><i class="right" id="rating"></i> </p>
-                </div>
-               
-              </div>
-            </div>
-    
+    <div class="row" id="gifDiv">
+
+
     
 
-            <div class="col s6 m4 l3">
-                    <div class="card">
-                      <div class="card-image">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvpxLCmqFPZEJydjc_bu_BEeEP78EF5P2iN2Iohc8MsiqOvpl&s">
-                        <span class="card-title black white-text">cat</span>
-                      </div>
-                      <div class="card-content black white-text">
-                        <p>I am a very simple card. .</p>
-                      </div>
-                     
-                    </div>
-                  </div>
-    
-
-      </div>
-
-
-        
     </div>
 
 
 
+  </div>
 
 
 
 
-      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script> 
-<script type="text/javascript" src="java.js"></script>
+
+
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="java.js"></script>
 
 
 
