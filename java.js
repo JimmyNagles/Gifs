@@ -50,9 +50,11 @@ $("gifDiv").append()
         
                 console.log(gifLink, rating, tittle)
     
-                $('#gifDiv').append(x,tittle)
-
+               
                 
+              $('#gifDiv').append('<div class="col s6 m4 l3 text-white">' + '<div class="card black">'+'<div class="card-image ">' +'<img src="' + gifLink+ '"></div>'+'<span class="card-title black white-text">'+ tittle+'</span>' +'</div>'+'</div>');
+        
+
             }
 
         });
