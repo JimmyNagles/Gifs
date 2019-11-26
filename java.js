@@ -3,7 +3,7 @@ $(document).ready(function () {
     $(document).on("click", ".gif-class", function () {
     
     
-    
+        $( "#gifDiv" ).empty();
         buttonGif = $(this).text();
         GifAPICall();
 
