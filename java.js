@@ -52,7 +52,7 @@ $("gifDiv").append()
     
                
                 
-              $('#gifDiv').append('<div class="col s6 m4 l3 text-white">' + '<div class="card black">'+'<div class="card-image ">' +'<img src="' + gifLink+ '"></div>'+'<span class="card-title black white-text">'+x+'</span>'+'. ' +'<span class="card-title black white-text">'+ tittle+'</span>'+'</div>'+'</div>');
+              $('#gifDiv').append('<div class="col s6 m4 l4 text-white">' + '<div class="card black">'+'<div class="card-image ">' +'<img src="' + gifLink+ '"></div>'+'<span class="card-title black white-text">'+x+'</span>'+'. ' +'<span class="card-title black white-text">'+ tittle+'</span>'+'</div>'+'</div>');
         
 
             }
