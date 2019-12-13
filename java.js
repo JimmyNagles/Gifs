@@ -20,6 +20,8 @@ $(document).ready(function () {
 
         $("gifDiv").append()
 
+        
+
     })
 
     let buttonGif;
