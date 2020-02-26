@@ -6,22 +6,8 @@ $(document).ready(function () {
         $("#gifDiv").empty();
         buttonGif = $(this).text();
         GifAPICall();
-
-
-
-
-
-
-
         console.log(buttonGif)
-
-
-
-
         $("gifDiv").append()
-
-        
-
     })
 
     let buttonGif;
@@ -63,10 +49,6 @@ $(document).ready(function () {
 
     }
 
-
-
-
-
 });
 
 
@@ -81,12 +63,6 @@ $("#search-btn").on("click", function () {
     let pullGif = $("#gifSearch").val().trim();
 
     console.log("working", pullGif);
-
-
-
-
     $("#botones").append(' <a class="btn-floating btn-large waves-effect waves-light black gif-class">' + pullGif + '</a>')
 
 });
-
-
