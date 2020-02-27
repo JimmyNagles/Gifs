@@ -53,7 +53,7 @@ $(document).ready(function () {
 
 
 
-
+let gifsArray=["lion","tiger","panter"]
 
 
 // btn creating function
@@ -62,7 +62,26 @@ $("#search-btn").on("click", function () {
 
     let pullGif = $("#gifSearch").val().trim();
 
+        gifsArray.push(pullGif)
+
+        console.log(gifsArray)
+
+            $("#botones").empty();
+
+        gifsArray.forEach(x => 
+            $("#botones").append(' <a class="btn-floating btn-large waves-effect waves-light black gif-class">' + x + '</a>')
+
+            )
+
+          
+   
+
+
+    
+    
     console.log("working", pullGif);
-    $("#botones").append(' <a class="btn-floating btn-large waves-effect waves-light black gif-class">' + pullGif + '</a>')
+
+
+   
 
 });
