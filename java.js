@@ -84,11 +84,12 @@ let gifsArray = ["lion", "tiger", "panter"]
 $("#search-btn").on("click", function () {
 
     let pullGif = $("#gifSearch").val().trim();
-
+    
     gifsArray.push(pullGif)
-
+    
     console.log(gifsArray)
-
+    
+    $("#gifSearch").val("");
     $("#botones").empty();
 
     gifsArray.forEach(x =>
