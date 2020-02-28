@@ -1,5 +1,21 @@
 $(document).ready(function () {
 
+    $(document).on("click",".gif", function() {
+        // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+        var state = $(this).attr("data-state");
+        // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+        // Then, set the image's data-state to animate
+        // Else set src to the data-still value
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
+
+
     $(document).on("click", ".gif-class", function () {
 
 
@@ -32,11 +48,12 @@ $(document).ready(function () {
             for (let x = 0; x < gifsArray.length; x++) {
 
 
-                let gifLink = response.data[x].images.downsized.url;
-                let rating = response.data[x].rating
-                let tittle = response.data[x].title
+                let gifStill = gifsArray[x].images.fixed_height_still.url;
+                let gifAnimated=gifsArray[x].images.downsized.url;
+                let rating = gifsArray[x].rating
+                let tittle = gifsArray[x].title
 
-                console.log(gifLink, rating, tittle)
+                console.log("still",gifStill,"rating", rating,"tittle", tittle,"animated", gifAnimated)
 
 
                 // Creating a div for the gif
@@ -48,16 +65,19 @@ $(document).ready(function () {
                 var p = $("<p>").text("Rating: " + rating);
 
                 // Creating an image tag
-                var personImage = $("<img>");
+                var gifImage = $("<img class='gif'>");
                 //creat an tittle tag
                 var t= $("<p>").text("tittle " + tittle);
 
                 // Giving the image tag an src attribute of a proprty pulled off the
                 // result item
-                personImage.attr("src", gifLink);
+                gifImage.attr("src", gifStill);
+                gifImage.attr("data-still", gifStill);
+                gifImage.attr("data-animate", gifAnimated);
+                gifImage.attr("data-state", "still");
 
-                // Appending the paragraph and personImage we created to the "gifDiv" div we created
-                gifDiv.append(personImage);
+                // Appending the paragraph and gifImage we created to the "gifDiv" div we created
+                gifDiv.append(gifImage);
                 gifDiv.append(p);
                 gifDiv.append(t)
 
@@ -65,12 +85,15 @@ $(document).ready(function () {
                 $("#gifDiv").prepend(gifDiv);
                 
             }
-            // $('#gifDiv').append( + '<div class="card black">' + '<div class="card-image ">' + '<img width="200" height="200" src="' + gifLink + '"></div>' + '<span class="card-title black white-text">' + x + '</span>' + '. ' + '<span class="card-title black white-text">' + tittle + '</span>' + '</div>' + '</div>');
+            // $('#gifDiv').append( + '<div class="card black">' + '<div class="card-image ">' + '<img width="200" height="200" src="' + gifStill + '"></div>' + '<span class="card-title black white-text">' + x + '</span>' + '. ' + '<span class="card-title black white-text">' + tittle + '</span>' + '</div>' + '</div>');
 
 
         });
 
     }
+
+    
+
 
 });
 
